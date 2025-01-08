@@ -33,3 +33,14 @@ header .container {
     font-weight: bold;
     color: #6a11cb;
 }
+
+#contact img {
+    width: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+    color: #ffeb3b; /* Adds a hover effect */
+}
