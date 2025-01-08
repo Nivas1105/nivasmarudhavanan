@@ -11,7 +11,7 @@ import logging
 from google.cloud import storage
 
 # Configuration
-AWS_SECRET_NAME = "gcp_service_account_secret"
+AWS_SECRET_NAME = ""
 AWS_REGION_NAME = "us-east-1"
 GCS_BUCKET_NAME = "data_source_project"
 S3_FINAL_BUCKET = "mysitebucketuta"
