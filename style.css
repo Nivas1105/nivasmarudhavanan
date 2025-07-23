@@ -60,27 +60,39 @@ body {
 }
 
 /* --- Home/Hero Section --- */
+.hero-profile-img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 4px solid var(--accent-primary);
+    box-shadow: 0 0 40px rgba(34, 211, 238, 0.5);
+    margin-right: 40px; 
+    animation: none;
+}
+#home .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 991px) {
+    #home .row {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-profile-img {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+}
 #home {
     background: linear-gradient(180deg, var(--bg-dark-primary) 70%, rgba(31, 41, 55, 0.5)),
                 radial-gradient(circle at top left, rgba(34, 211, 238, 0.15), transparent 40%);
     padding-top: 80px;
 }
-#home .row {
-    align-items: center;
-    justify-content: space-between;
-}
-.hero-profile-img {
-    width: 280px;
-    height: 280px;
-    margin-right: 3rem;
-    animation: float 6s ease-in-out infinite;
-}
 
-@media (max-width: 991px) {
-    .hero-profile-img {
-        margin: 0 auto 2rem auto;
-    }
-}
 @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
 .hero-text-content {
     opacity: 0;
