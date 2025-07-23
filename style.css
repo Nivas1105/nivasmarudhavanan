@@ -65,12 +65,21 @@ body {
                 radial-gradient(circle at top left, rgba(34, 211, 238, 0.15), transparent 40%);
     padding-top: 80px;
 }
+#home .row {
+    align-items: center;
+    justify-content: space-between;
+}
 .hero-profile-img {
-    width: 280px; height: 280px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--accent-primary);
-    box-shadow: 0 0 40px rgba(34, 211, 238, 0.5);
+    width: 280px;
+    height: 280px;
+    margin-right: 3rem;
+    animation: float 6s ease-in-out infinite;
+}
+
+@media (max-width: 991px) {
+    .hero-profile-img {
+        margin: 0 auto 2rem auto;
+    }
 }
 @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
 .hero-text-content {
@@ -120,8 +129,22 @@ section:not(#home) { border-top: 1px solid var(--border-color); }
 /* --- Core Competencies Section --- */
 .competencies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+}
+
+/* For tablet view */
+@media (max-width: 992px) {
+    .competencies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For mobile view */
+@media (max-width: 768px) {
+    .competencies-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .competency-category {
