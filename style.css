@@ -118,12 +118,12 @@ section:not(#home) { border-top: 1px solid var(--border-color); }
 }
 
 /* --- Core Competencies Section --- */
-
 .competencies-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
-    grid-template-columns: 1fr;
 }
+
 .competency-category {
     background: var(--bg-dark-secondary);
     border-radius: 12px;
@@ -349,14 +349,4 @@ footer { background-color: var(--bg-dark-primary); color: var(--text-secondary);
     .timeline-container.right { left: 0%; }
     .timeline-container::after { left: 18px; }
     .project-tabs { flex-wrap: wrap; }
-}
-@media screen and (min-width: 768px) {
-    .competencies-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media screen and (min-width: 992px) {
-    .competencies-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
