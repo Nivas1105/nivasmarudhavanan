@@ -60,9 +60,6 @@ body {
 }
 
 /* --- Home/Hero Section --- */
-/* REPLACE THIS ENTIRE CSS BLOCK IN YOUR style.css FILE */
-
-/* --- Home/Hero Section --- */
 #home {
     background: linear-gradient(180deg, var(--bg-dark-primary) 70%, rgba(31, 41, 55, 0.5)),
                 radial-gradient(circle at top left, rgba(34, 211, 238, 0.15), transparent 40%);
