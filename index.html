@@ -200,16 +200,34 @@
         <div class="container">
             <h2 class="section-title">Projects Portfolio</h2>
             <ul class="nav nav-pills justify-content-center mb-4 project-tabs" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation"><button class="nav-link active" id="pills-data-science-tab" data-bs-toggle="pill" data-bs-target="#pills-data-science" type="button" role="tab">Data Science</button></li>
+                <li class="nav-item" role="presentation"><button class="nav-link active" id="pills-cloud-devops-tab" data-bs-toggle="pill" data-bs-target="#pills-cloud-devops" type="button" role="tab">Cloud & DevOps</button></li>
+                <li class="nav-item" role="presentation"><button class="nav-link" id="pills-data-science-tab" data-bs-toggle="pill" data-bs-target="#pills-data-science" type="button" role="tab">Data Science</button></li>
                 <li class="nav-item" role="presentation"><button class="nav-link" id="pills-data-engineering-tab" data-bs-toggle="pill" data-bs-target="#pills-data-engineering" type="button" role="tab">Data Engineering</button></li>
                 <li class="nav-item" role="presentation"><button class="nav-link" id="pills-data-analysis-tab" data-bs-toggle="pill" data-bs-target="#pills-data-analysis" type="button" role="tab">Data Analysis</button></li>
                 <li class="nav-item" role="presentation"><button class="nav-link" id="pills-python-tab" data-bs-toggle="pill" data-bs-target="#pills-python" type="button" role="tab">Python</button></li>
                 <li class="nav-item" role="presentation"><button class="nav-link" id="pills-sql-tab" data-bs-toggle="pill" data-bs-target="#pills-sql" type="button" role="tab">SQL</button></li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
-                
+                <!-- Cloud & DevOps Pane -->
+                <div class="tab-pane fade show active" id="pills-cloud-devops" role="tabpanel">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-md-6">
+                          <div class="card project-card h-100">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070&auto=format&fit=crop" class="card-img-top" alt="Terraform Atlantis GitHub Actions Project">
+                            <div class="card-body d-flex flex-column">
+                              <h5 class="card-title">Automated Infrastructure & Application Deployment using Terraform, Atlantis, and GitHub Actions</h5>
+                              <p class="card-text">
+                                Built a CI/CD pipeline using Terraform, Atlantis, and GitHub Actions on AWS to automate Flask app deployment with containerized operations and zero-downtime updates.
+                              </p>
+                              <a href="https://github.com/Nivas1105/cloud_devops_project/tree/main/app" class="btn btn-custom mt-auto" target="_blank">View on GitHub</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      
                 <!-- Data Science Pane -->
-                <div class="tab-pane fade show active" id="pills-data-science" role="tabpanel">
+                <div class="tab-pane fade" id="pills-data-science" role="tabpanel">
                     <!-- The key is to make the row's columns add up to 12. For 4 cards, use col-md-3 -->
                     <div class="row g-4 justify-content-center">
                         <!-- Card 1 -->
