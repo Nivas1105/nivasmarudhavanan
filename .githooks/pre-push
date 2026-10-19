@@ -1,0 +1,33 @@
+#!/bin/sh
+# Reject outgoing commits that add or modify binary files.
+set -eu
+
+fail=0
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ -n "$local_sha" ] || continue
+  [ "$local_sha" = "0000000000000000000000000000000000000000" ] && continue
+
+  if [ "$remote_sha" = "0000000000000000000000000000000000000000" ]; then
+    commits=$(git rev-list --reverse "$local_sha")
+  else
+    commits=$(git rev-list --reverse "$remote_sha..$local_sha" 2>/dev/null || git rev-list --reverse "$local_sha")
+  fi
+
+  for commit in $commits; do
+    while IFS="$(printf '\t')" read -r added deleted path; do
+      [ -n "$path" ] || continue
+      if [ "$added" = "-" ] || [ "$deleted" = "-" ]; then
+        printf 'Blocked binary change in %s (%s)\n' "$commit" "$path" >&2
+        fail=1
+      fi
+    done <<EOF_DIFF
+$(git diff-tree --root --no-commit-id --diff-filter=ACMRT --numstat -r "$commit")
+EOF_DIFF
+  done
+done
+
+if [ "$fail" -ne 0 ]; then
+  printf '\nPush cancelled: outgoing commits contain binary file changes.\n' >&2
+  printf 'Use Git LFS or host the asset elsewhere, then push again.\n' >&2
+  exit 1
+fi
